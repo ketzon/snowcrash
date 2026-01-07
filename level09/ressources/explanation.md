@@ -1,19 +1,49 @@
-en jouant avec l'executable `ex09` on s'apercoit qu'il print la string et il incremente la valeur ascii par rapport au nombre de caractere
+# Level09 — Décodage du token
 
-```./level09 aaaaaaaaaaaaaaaaaaaaaaaaaa
-abcdefghijklmnopqrstuvwxyz```
+En jouant avec l’exécutable `level09`, on s’aperçoit qu’il affiche la chaîne passée en argument, mais **en incrémentant la valeur ASCII de chaque caractère selon sa position**.
 
-pour decoder le token on a juste a appliquer le meme algo mais inverse, au lieu de +1 on -1
+Exemple :
 
-# fonction pour appliquer l'alog sur le token
+```bash
+./level09 aaaaaaaaaaaaaaaaaaaaaaaaaa
+```
 
-vim `/tmp/main.c`
-```#include <stdio.h>
+Output :
+
+```
+abcdefghijklmnopqrstuvwxyz
+```
+
+👉 Donc le caractère à la position `i` est transformé en :  
+```
+c' = c + i
+```
+
+---
+
+## 🔓 Objectif : décoder le token
+
+Pour décoder le token, il suffit donc **d'appliquer l’algorithme inverse** :
+
+```
+c' = c - i
+```
+
+---
+
+## 🧠 Programme pour décoder
+
+On crée un programme en C qui applique l’inversion :
+
+Créer `/tmp/main.c`
+
+```c
+#include <stdio.h>
 
 int main(int ac, char **av) {
     int i = 0;
     char c;
-    
+
     while (av[1][i] != 0) {
         c = av[1][i];
         printf("%c", (c - i));
@@ -21,14 +51,31 @@ int main(int ac, char **av) {
     }
     printf("\n");
     return 0;
-}```
+}
+```
 
-```cd /tmp```
-```cc main.c```
-```cd /tmp```
-```./a.out cat `~/token'```
+Compiler :
 
-on utilise le token pour se auth:
+```bash
+cd /tmp
+cc main.c
+```
 
-`su flag09`
-`getflag`
+Puis exécuter sur le token :
+
+```bash
+./a.out `cat ~/token`
+```
+
+Cela affiche **le token décodé** 🎉
+
+---
+
+## 🔑 Utilisation du token
+
+```bash
+su flag09
+getflag
+```
+
+Flag obtenu 😎
