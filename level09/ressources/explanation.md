@@ -1,4 +1,4 @@
-# Level09 — Décodage du token
+# Level09 — decodage du token
 
 En jouant avec l’exécutable `level09`, on s’aperçoit qu’il affiche la chaîne passée en argument, mais **en incrémentant la valeur ASCII de chaque caractère selon sa position**.
 
@@ -14,14 +14,14 @@ Output :
 abcdefghijklmnopqrstuvwxyz
 ```
 
-👉 Donc le caractère à la position `i` est transformé en :  
+Donc le caractère à la position `i` est transformé en :  
 ```
 c' = c + i
 ```
 
 ---
 
-## 🔓 Objectif : décoder le token
+##  Objectif décoder le token
 
 Pour décoder le token, il suffit donc **d'appliquer l’algorithme inverse** :
 
@@ -31,7 +31,7 @@ c' = c - i
 
 ---
 
-## 🧠 Programme pour décoder
+## Programme pour décoder
 
 On crée un programme en C qui applique l’inversion :
 
@@ -67,15 +67,12 @@ Puis exécuter sur le token :
 ./a.out `cat ~/token`
 ```
 
-Cela affiche **le token décodé** 🎉
-
 ---
 
-## 🔑 Utilisation du token
+##  Utilisation du token
 
 ```bash
 su flag09
 getflag
 ```
 
-Flag obtenu 😎
