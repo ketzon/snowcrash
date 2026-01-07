@@ -10,8 +10,10 @@
 !_TAG_PROGRAM_URL	https://ctags.io/	/official site/
 !_TAG_PROGRAM_VERSION	5.9.0	//
 Explication	level01/resources/explanation.md	/^### Explication$/;"	S
+Explication	level04/resources/explanation.md	/^# Explication$/;"	c
 Explications	level02/resources/explanation.md	/^# Explications$/;"	c
 Exploit	level05/ressources/explanation.md	/^# Exploit$/;"	c
+Exploiter la faille	level04/resources/explanation.md	/^## Exploiter la faille$/;"	s	chapter:Explication
 Level00	level00/ressources/walkthrough.md	/^# Level00$/;"	c
 Message	level05/ressources/explanation.md	/^# Message$/;"	c
 Ouvrir le script	level05/ressources/explanation.md	/^# Ouvrir le script$/;"	c
