@@ -13,6 +13,8 @@ Explication	level01/resources/explanation.md	/^### Explication$/;"	S
 Explications	level02/resources/explanation.md	/^# Explications$/;"	c
 Level00	level00/ressources/walkthrough.md	/^# Level00$/;"	c
 exploit	level03/ressources/explanation.md	/^# exploit$/;"	c
+message	level05/ressources/explanation.md	/^# message$/;"	c
+ouvrir script	level05/ressources/explanation.md	/^# ouvrir script$/;"	c
 piste	level03/ressources/explanation.md	/^# piste$/;"	c
 resume	level03/ressources/explanation.md	/^# resume$/;"	c
 risk et fix	level03/ressources/explanation.md	/^# risk et fix$/;"	c
