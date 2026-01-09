@@ -68,3 +68,5 @@ printf("You may not access '%s'\n", "token"You may not access 'token'
 ```
 
 On voit bien que c'est bien une simple comparaison et que le mot `token` est hardcode pour etre rejete.
+
+Le mot de passe de `flag08` est donc `quif5eloekouj29ke0vouxean`.
