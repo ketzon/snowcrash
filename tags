@@ -9,14 +9,23 @@
 !_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
 !_TAG_PROGRAM_URL	https://ctags.io/	/official site/
 !_TAG_PROGRAM_VERSION	5.9.0	//
+Comment eviter cette attaque	level10/resources/explanation.md	/^## Comment eviter cette attaque$/;"	s	chapter:Explication
+Comment exploiter ?	level06/resources/explanation.md	/^## Comment exploiter ?$/;"	s	chapter:Explication
 Explication	level01/resources/explanation.md	/^### Explication$/;"	S
 Explication	level04/resources/explanation.md	/^# Explication$/;"	c
+Explication	level06/resources/explanation.md	/^# Explication$/;"	c
+Explication	level08/resources/explanation.md	/^# Explication$/;"	c
+Explication	level10/resources/explanation.md	/^# Explication$/;"	c
 Explications	level02/resources/explanation.md	/^# Explications$/;"	c
 Exploit	level05/ressources/explanation.md	/^# Exploit$/;"	c
 Exploiter la faille	level04/resources/explanation.md	/^## Exploiter la faille$/;"	s	chapter:Explication
 Level00	level00/ressources/walkthrough.md	/^# Level00$/;"	c
+Level09 — decodage du token	level09/ressources/explanation.md	/^# Level09 — decodage du token$/;"	c
 Message	level05/ressources/explanation.md	/^# Message$/;"	c
+Objectif décoder le token	level09/ressources/explanation.md	/^##  Objectif décoder le token$/;"	s	chapter:Level09 — decodage du token
 Ouvrir le script	level05/ressources/explanation.md	/^# Ouvrir le script$/;"	c
+Programme pour décoder	level09/ressources/explanation.md	/^## Programme pour décoder$/;"	s	chapter:Level09 — decodage du token
+Utilisation du token	level09/ressources/explanation.md	/^##  Utilisation du token$/;"	s	chapter:Level09 — decodage du token
 exploit	level03/ressources/explanation.md	/^# exploit$/;"	c
 piste	level03/ressources/explanation.md	/^# piste$/;"	c
 resume	level03/ressources/explanation.md	/^# resume$/;"	c
