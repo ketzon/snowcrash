@@ -126,6 +126,8 @@ Connection from 127.0.0.1 port 6969 [tcp/*] accepted
 test1
 ```
 
+Le mot de passe de `flag10` est donc `woupa2yuojeeaaed06riuj63c`.
+
 ## Comment eviter cette attaque
 
 Il faudrait ouvrir le fichier une seule fois et verifier les droits ensuite grace a son descripteur de fichier que on a obtenu. Il est surement possible de refuser des symlink qui on l'air des tres exploiter pour les fichiers.
