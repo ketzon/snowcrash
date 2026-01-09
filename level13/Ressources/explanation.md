@@ -1,4 +1,4 @@
-l'executable retourne: `-rwsr-sr-x 1 flag13 level13 7303 Aug 30  2015 ./level13'
+l'executable retourne: `-rwsr-sr-x 1 flag13 level13 7303 Aug 30  2015 ./level13`
 
 on a encore un executable qui peut elever nos privilege grace a `suid flag13`.
 
